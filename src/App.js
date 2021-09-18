@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import BubblePage from "./components/BubblePage";
 
 import Login from "./components/Login";
 import "./styles.scss";
@@ -13,6 +14,17 @@ function App() {
           <a data-testid="logoutButton" href="#">logout</a>
         </header>
       </div>
+
+      <Route path='/login'>
+        <Login />
+      </Route>
+
+      <Route path='/'> 
+          <Login />
+        </Route>
+
+        <PrivateRoute path='BubblePage' component={BubblePage}/>
+
     </Router>
   );
 }
